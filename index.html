@@ -6,6 +6,14 @@
 <meta name="description" content="Aliyan Sami & Arooj Fatima, 12-15 March 2027, Multan & Gujranwala">
 <meta property="og:title" content="Aliyan & Arooj">
 <meta property="og:description" content="You are invited to our wedding, 12-15 March 2027">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aliyansami.github.io/aliyan-arooj-wedding/">
+<meta property="og:image" content="https://aliyansami.github.io/aliyan-arooj-wedding/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Aliyan and Arooj wedding invitation with floating lanterns">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://aliyansami.github.io/aliyan-arooj-wedding/og.jpg">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Aliyan &amp; Arooj</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -265,6 +273,39 @@ h2{font-family:var(--f-display);font-weight:400;font-size:1.35rem;letter-spacing
 .closing p{margin:0}
 .closing .sign{font-family:var(--f-display);font-size:1.5rem;letter-spacing:.16em;color:var(--gold)}
 
+/* ---------- RSVP ---------- */
+.rsvp-cta{font-family:var(--f-ui);font-size:.75rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:11px 24px;margin-top:4px;transition:background .2s,color .2s}
+.rsvp-cta:hover,.rsvp-cta:focus-visible{background:var(--gold);color:var(--night-deep);outline:none}
+.rsvp,.rsvp-done{width:100%;box-sizing:border-box;display:grid;gap:20px;text-align:left;padding:24px 20px;border:1px solid var(--line);border-radius:10px;background:var(--card);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.field{display:grid;gap:8px;border:0;margin:0;padding:0;min-width:0}
+.field > label,.field > legend{font-family:var(--f-ui);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mist);padding:0}
+.field > legend{margin-bottom:8px}
+.opt{letter-spacing:.04em;text-transform:none;font-style:italic}
+.rsvp input[type=text],.rsvp input[type=tel],.rsvp select,.rsvp textarea{width:100%;box-sizing:border-box;font-family:var(--f-body);font-size:1.12rem;color:var(--ivory);background:rgba(6,11,32,.55);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
+.rsvp textarea{resize:vertical;min-height:84px}
+.rsvp ::placeholder{color:var(--mist);opacity:.55}
+.rsvp input:focus,.rsvp select:focus,.rsvp textarea:focus{outline:2px solid var(--lantern);outline-offset:1px;border-color:transparent}
+.choices{display:grid;gap:8px}
+.choices.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.choices.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:420px){.choices.three{grid-template-columns:1fr}}
+.choice{position:relative;display:block;cursor:pointer}
+.choice input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.choice span{display:grid;gap:2px;height:100%;box-sizing:border-box;padding:12px 14px;border:1px solid var(--line);border-radius:6px;font-family:var(--f-body);font-size:1.08rem;line-height:1.25;color:var(--ivory);background:rgba(6,11,32,.35);transition:border-color .2s,background .2s}
+.choice small{font-family:var(--f-ui);font-size:.66rem;letter-spacing:.08em;color:var(--mist)}
+.choice input:checked + span{border-color:var(--lantern);background:rgba(255,176,74,.14);box-shadow:inset 0 0 0 1px var(--lantern)}
+.choice input:focus-visible + span{outline:2px solid var(--ivory);outline-offset:2px}
+.hp{position:absolute!important;left:-9999px;width:1px;height:1px;opacity:0}
+.form-error{margin:0;color:#ffb3a1;font-style:italic}
+.rsvp-submit{animation:none;justify-self:start;margin-top:0}
+.rsvp-submit:disabled{opacity:.6;cursor:wait}
+.rsvp-done{justify-items:center;text-align:center;gap:10px}
+.rsvp-done .urdu{font-size:1.6rem;line-height:2}
+.rsvp-done h3{font-family:var(--f-display);font-weight:400;font-size:1.4rem;letter-spacing:.1em;margin:0}
+.rsvp-done p{margin:0}
+.link-btn{background:none;border:0;color:var(--gold);font-family:var(--f-ui);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:underline;text-underline-offset:4px;cursor:pointer;padding:8px}
+.link-btn:focus-visible{outline:2px solid var(--ivory)}
+
 @media (prefers-reduced-motion:reduce){
   .cover{transition:opacity .4s}
   .cover.open{transform:none}
@@ -363,6 +404,7 @@ h2{font-family:var(--f-display);font-weight:400;font-size:1.35rem;letter-spacing
       <div><b id="cd-s">--</b><small>Seconds</small></div>
     </div>
     <p class="count-label" id="cd-label">until the Nikkah &amp; Mehndi</p>
+    <a class="rsvp-cta" href="#rsvp">RSVP now</a>
   </section>
 
   <section aria-label="The celebrations">
@@ -705,6 +747,63 @@ h2{font-family:var(--f-display);font-weight:400;font-size:1.35rem;letter-spacing
     </div>
   </section>
 
+  <section id="rsvp" aria-labelledby="rsvp-title">
+    <h2 id="rsvp-title">RSVP</h2>
+    <p class="sub">Please let us know if you can join us</p>
+    <form class="rsvp" id="rsvpForm" novalidate>
+      <div class="field">
+        <label for="rsvp-name">Your name</label>
+        <input id="rsvp-name" name="name" type="text" autocomplete="name" required maxlength="80" placeholder="e.g. Ahmed Khan">
+      </div>
+      <div class="field">
+        <label for="rsvp-phone">Phone or WhatsApp <span class="opt">(optional)</span></label>
+        <input id="rsvp-phone" name="phone" type="tel" autocomplete="tel" maxlength="20" placeholder="03xx xxxxxxx">
+      </div>
+      <fieldset class="field">
+        <legend>Will you attend?</legend>
+        <div class="choices two">
+          <label class="choice"><input type="radio" name="attending" id="rsvp-yes" value="Yes"><span>Joyfully accept</span></label>
+          <label class="choice"><input type="radio" name="attending" id="rsvp-no" value="No"><span>Regretfully decline</span></label>
+        </div>
+      </fieldset>
+      <div id="ifYes" class="field" style="gap:20px">
+        <div class="field">
+          <label for="rsvp-guests">Number of guests, including you</label>
+          <select id="rsvp-guests" name="guests"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>
+        </div>
+        <fieldset class="field">
+          <legend>Which events will you attend?</legend>
+          <div class="choices">
+            <label class="choice"><input type="checkbox" name="mehndi" id="rsvp-ev1" value="Yes" checked><span>Nikkah &amp; Mehndi<small>Fri 12 March · 7:00 PM · Multan</small></span></label>
+            <label class="choice"><input type="checkbox" name="baraat" id="rsvp-ev2" value="Yes" checked><span>Baraat<small>Sat 13 March · 2:00 PM · Multan</small></span></label>
+            <label class="choice"><input type="checkbox" name="walima" id="rsvp-ev3" value="Yes" checked><span>Walima<small>Mon 15 March · 2:00 PM · Gujranwala</small></span></label>
+          </div>
+        </fieldset>
+      </div>
+      <fieldset class="field">
+        <legend>You are joining from</legend>
+        <div class="choices three">
+          <label class="choice"><input type="radio" name="side" id="rsvp-side-b" value="Bride's family"><span>Bride's family</span></label>
+          <label class="choice"><input type="radio" name="side" id="rsvp-side-g" value="Groom's family"><span>Groom's family</span></label>
+          <label class="choice"><input type="radio" name="side" id="rsvp-side-f" value="Friends"><span>Friends</span></label>
+        </div>
+      </fieldset>
+      <div class="field">
+        <label for="rsvp-msg">A message or dua for the couple <span class="opt">(optional)</span></label>
+        <textarea id="rsvp-msg" name="message" rows="3" maxlength="500"></textarea>
+      </div>
+      <input type="text" name="website" id="rsvp-hp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="form-error" id="rsvpError" role="alert" hidden></p>
+      <button class="open-btn rsvp-submit" type="submit" id="rsvpSubmit">Send RSVP</button>
+    </form>
+    <div class="rsvp-done" id="rsvpDone" role="status" hidden>
+      <p class="urdu">شکریہ</p>
+      <h3 id="rsvpDoneTitle">Thank you</h3>
+      <p id="rsvpDoneText">Your RSVP has been received.</p>
+      <button type="button" class="link-btn" id="rsvpAgain">Change my reply</button>
+    </div>
+  </section>
+
   <section aria-label="Hosts">
     <h2>With love from</h2>
     <div class="hosts">
@@ -971,6 +1070,63 @@ h2{font-family:var(--f-display);font-weight:400;font-size:1.35rem;letter-spacing
     document.body.classList.add('opened');
     setTimeout(function(){ cover.hidden = true; }, 1700);
   });
+
+  /* ---------- RSVP (sent to a Google Sheet via Apps Script) ---------- */
+  var RSVP_URL = '';
+  (function(){
+    var form = document.getElementById('rsvpForm'), done = document.getElementById('rsvpDone');
+    var err = document.getElementById('rsvpError'), btn = document.getElementById('rsvpSubmit');
+    var ifYes = document.getElementById('ifYes');
+    var KEY = 'aa-rsvp';
+    function attending(){ var r = form.querySelector('input[name="attending"]:checked'); return r ? r.value : ''; }
+    function syncYes(){ ifYes.hidden = attending() === 'No'; }
+    [].forEach.call(form.querySelectorAll('input[name="attending"]'), function(r){ r.addEventListener('change', syncYes); });
+    function showErr(m){ err.textContent = m; err.hidden = false; }
+    function showDone(name, att){
+      document.getElementById('rsvpDoneTitle').textContent = 'Thank you, ' + name;
+      document.getElementById('rsvpDoneText').textContent = att === 'Yes'
+        ? 'Your RSVP has been received. We look forward to celebrating with you.'
+        : 'Your reply has been received. You will be missed, and we are grateful for your duas.';
+      form.hidden = true; done.hidden = false;
+    }
+    try { var saved = JSON.parse(localStorage.getItem(KEY) || 'null'); if (saved && saved.name) showDone(saved.name, saved.att); } catch (e) {}
+    document.getElementById('rsvpAgain').addEventListener('click', function(){
+      done.hidden = true; form.hidden = false; btn.disabled = false; btn.textContent = 'Send RSVP';
+      try { localStorage.removeItem(KEY); } catch (e) {}
+      document.getElementById('rsvp-name').focus();
+    });
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault(); err.hidden = true;
+      var nameEl = document.getElementById('rsvp-name'), name = nameEl.value.trim(), att = attending();
+      if (!name){ showErr('Please enter your name.'); nameEl.focus(); return; }
+      if (!att){ showErr('Please choose whether you can attend.'); return; }
+      if (att === 'Yes' && !form.mehndi.checked && !form.baraat.checked && !form.walima.checked){ showErr('Please tick at least one event you will attend.'); return; }
+      if (form.website.value){ showDone(name, att); return; }
+      if (!RSVP_URL){ showErr('RSVPs are not open yet. Please check back soon.'); return; }
+      var yes = att === 'Yes';
+      var data = new URLSearchParams();
+      data.append('name', name);
+      data.append('phone', form.phone.value.trim());
+      data.append('attending', att);
+      data.append('guests', yes ? form.guests.value : '0');
+      data.append('mehndi', yes && form.mehndi.checked ? 'Yes' : '');
+      data.append('baraat', yes && form.baraat.checked ? 'Yes' : '');
+      data.append('walima', yes && form.walima.checked ? 'Yes' : '');
+      var side = form.querySelector('input[name="side"]:checked');
+      data.append('side', side ? side.value : '');
+      data.append('message', form.message.value.trim());
+      btn.disabled = true; btn.textContent = 'Sending…';
+      fetch(RSVP_URL, { method: 'POST', mode: 'no-cors', body: data })
+        .then(function(){
+          try { localStorage.setItem(KEY, JSON.stringify({ name: name, att: att })); } catch (e) {}
+          showDone(name, att);
+        })
+        .catch(function(){
+          btn.disabled = false; btn.textContent = 'Send RSVP';
+          showErr('Your RSVP could not be sent. Check your internet connection and try again.');
+        });
+    });
+  })();
 
   /* ---------- countdown to the next event (Pakistan time, UTC+5) ---------- */
   var EVENTS = [
